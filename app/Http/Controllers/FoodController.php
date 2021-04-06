@@ -99,7 +99,7 @@ class FoodController extends Controller
         ]);
 
         $food = Food::find($id);
-        $name = $food->imag;
+        $name = $food->image;
         
         if($request->hasFile('image')){
             $image = $request->file('image');
