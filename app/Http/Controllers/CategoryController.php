@@ -36,6 +36,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'name'=>'required'
+        ]);
         // dd($request->all());
         Category::create([
             'name'=>$request->get('name')
@@ -75,6 +78,10 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $this->validate($request,[
+            'name'=>'required'
+        ]);
         $category = Category::find($id);
         $category->name = $request->get('name');
         $category->save();
@@ -89,6 +96,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
+
         $category = Category::find($id);
         $category->delete();
         return redirect()->route('category.index')->with('message','Category Deleted');
