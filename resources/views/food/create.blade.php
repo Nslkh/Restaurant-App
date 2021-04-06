@@ -25,7 +25,12 @@
 
                 <div class="form-group">
                   <label for="name">Category</label>
-                  <input type="text" name="name" class="form-control">
+                  <select name="category" class="form-control">
+                    <option value="">Select Category</option>
+                    @foreach (App\Models\Category::all() as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                  </select>
                 </div>
 
                 <div class="form-group">
