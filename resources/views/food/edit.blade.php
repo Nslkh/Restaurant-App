@@ -53,6 +53,9 @@
                 <option value="">Select Category</option>
                 @foreach (App\Models\Category::all() as $category)
                     <option value="{{ $category->id }}"
+                      @if ($category->id==$food->category_id)
+                          selected
+                      @endif
                       >{{ $category->name }}</option>
                 @endforeach
               </select>
