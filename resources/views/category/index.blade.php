@@ -10,7 +10,7 @@
         </div>
       @endif
       <div class="card">
-        <div class="card-header">All Category
+        <div class="card-header">{{ __('All Category') }}
           <span class="float-right">
             <a href="{{route('category.create')}}">
               <button class="btn btn-outline-secondary">Add Category</button>
