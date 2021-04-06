@@ -31,13 +31,15 @@
                       <td>{{ $category->name }}</td>
                       <td>
                         <a href="{{ route('category.edit',[$category->id]) }}">
-                          <button class="btn btn-outline-success">Edit</button>
+                            <button class="btn btn-outline-success">Edit</button>
                         </a>
                       </td>
                       <td>
-                        <a href="">
-                          <button class="btn btn-outline-danger">Delete</button>
-                        </a>
+                        <a href="{{ route('category.edit',[$category->id]) }}">
+                          <form action="{{ route('category.destroy',[$category->id]) }}" method="POST">@csrf
+                            {{ method_field('DELETE') }}
+                            <button class="btn btn-outline-danger">Delete</button>
+                          </form>
                       </td>
                     </tr>
                     @endforeach
