@@ -72,16 +72,19 @@
                   </div>
                 </div>
 
-                        </td>
-                      </tr>
-                      @endforeach
+                          </td>
+                        </tr>
+                        @endforeach
 
-                      @else
-                      <td>No category to display</td>
-                      @endif
-                      
-                    </tbody>
-                  </table>
+                        @else
+                        <td>No category to display</td>
+                        @endif
+                        
+                      </tbody>
+                    </table>
+
+                    
+
                 </div>
             </div>
         </div>
