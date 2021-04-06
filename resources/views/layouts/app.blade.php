@@ -40,11 +40,14 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @if (Auth::check())
-                            
-                        @endif
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('category.index') }}">{{ __('Category') }}</a>
+                            <a class="nav-link" href="{{ route('category.index') }}">{{ __('CATEGORY') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('food.index') }}">{{ __('FOOD') }}</a>
+                        </li>
+                        @endif
+                        
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
