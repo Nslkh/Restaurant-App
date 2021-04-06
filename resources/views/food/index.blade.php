@@ -12,7 +12,7 @@
       <div class="card">
         <div class="card-header">{{ __('All Category') }}
           <span class="float-right">
-            <a href="{{route('category.create')}}">
+            <a href="{{route('food.create')}}">
               <button class="btn btn-outline-secondary">Add Food</button>
             </a>
           </span>
