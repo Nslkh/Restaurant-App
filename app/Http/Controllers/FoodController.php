@@ -76,7 +76,8 @@ class FoodController extends Controller
      */
     public function edit($id)
     {
-        //
+        $food = Food::find($id);
+        return view('food.edit', compact('food'));
     }
 
     /**
