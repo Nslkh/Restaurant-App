@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Caregory;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -34,7 +35,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        return "ok";
+        // dd($request->all());
+        Caregory::create([
+            'name'=>$request->get('name')
+        ]);
+        return redirect()->back()->with('message','Category Created');
     }
 
     /**
