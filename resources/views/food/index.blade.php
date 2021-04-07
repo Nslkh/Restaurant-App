@@ -84,7 +84,7 @@
                   
                 </tbody>
             </table>    
-            {{ $foods->links()}}          
+            {{ $foods->links() }}          
           </div>
       </div>
     </div>

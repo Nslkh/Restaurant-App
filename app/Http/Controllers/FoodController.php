@@ -138,7 +138,7 @@ class FoodController extends Controller
     public function listFood()
     {
         $categories = Category::with('food')->get();
-        return view('food.list',compact('categories'));
+        return view('index',compact('categories'));
     }
 
 

@@ -3,26 +3,28 @@
 @section('content')
   <div class="container">
     <div class="row justify-content-center">
-      loop category
+      @foreach ($categories as $category)   
       <div class="col-md-12">
-        <h2>category name</h2>
+        <h2 style="color: blue">{{ $category->name }}</h2>
         <div class="jumbotron">
           <div class="row">
-            loop food 
+            @foreach (App\Models\Food::where('category_id',$category->id)->get() as $food)
+                
+          
             <div class="col-md-3">
-              <img src="" width="200" height="155">
-              <p class="text-center">food name
-                <span>$</span>
+              <img src="{{ asset('images') }}/{{ $food->image }}" width="200" height="155">
+              <p class="text-center">{{ $food->name }}
+                <span>${{ $food->price }}</span>
               </p>
               <p class="text-center">
                 <a href="">view</a>
               </p>
             </div>
-            endloop
+            @endforeach
           </div>
         </div>
       </div>
-      endloop
+      @endforeach
     </div>
   </div>
 @endsection
