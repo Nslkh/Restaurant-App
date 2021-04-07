@@ -15,9 +15,9 @@ use App\Http\Controllers\FoodController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes(['register'=>false]);
 
@@ -26,4 +26,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Route::get('/category/create', [App\Http\Controllers\CategoryController::class, 'create']);
 Route::resource('category', CategoryController::class)->middleware('auth');
-Route::resource('food', FoodController::class)->middleware('auth');;
+Route::resource('food', FoodController::class)->middleware('auth');
+
+Route::get('/', 'FoodController@listFood');
